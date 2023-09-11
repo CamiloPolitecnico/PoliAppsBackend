@@ -20,5 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('example.urls')),
     path('', include('logic_api.urls')),
-    #path('test_api/', test_api.test_api_request),
 ]
