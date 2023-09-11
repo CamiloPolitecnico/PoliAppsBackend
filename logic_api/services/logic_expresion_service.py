@@ -3,7 +3,7 @@ from itertools import product
 import numpy as np
 
 def get_true_table(expresion_str):
-    result = list()
+    result = []
     # Definir las variables proposicionales
     p, q = symbols('p q ')
     
@@ -23,14 +23,13 @@ def get_true_table(expresion_str):
     
     # Imprimir el encabezado de la tabla de verdad
     encabezado = [str(var) for var in variables] + [str(expresion)]
-    result = np.concatenate((result, encabezado))
-    #result.append(encabezado, use_unicode=True)
+    result.append(encabezado)
     
     # Calcular y mostrar los resultados en la tabla de verdad
     for valor in valores:
         asignaciones = dict(zip(variables, valor))
         resultado = expresion.subs(asignaciones)
         fila = [str(asignaciones[var]) for var in variables] + [str(resultado)]
-        result = np.concatenate((result, fila))
+        result.append(fila)
     
     return result
