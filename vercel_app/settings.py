@@ -108,10 +108,21 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 # Note: Django modules for using databases are not support in serverless
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3'
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3'
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'PoliappsBackend',
+        'USER': 'admin',
+        'PASSWORD': 'poliapps123',
+        'HOST': 'poliapps.csgoxzgq8vi9.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
